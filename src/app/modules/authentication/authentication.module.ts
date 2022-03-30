@@ -6,6 +6,7 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { LoginFooterComponent } from './components/login-footer/login-footer.component';
 import { LoginHeaderComponent } from './components/login-header/login-header.component';
 import { AuthenticationRoutingModule } from './authentication-routing.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { AuthenticationRoutingModule } from './authentication-routing.module';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     AuthenticationRoutingModule
   ]
 })

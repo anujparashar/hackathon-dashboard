@@ -1,12 +1,12 @@
 <div class="login-container">
     <h3>Signup Page</h3>
-        <form>      
+        <form (ngSubmit)="onSubmit(formData.value)" #formData = "ngForm">      
             <div class="login-body">
                 <label><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
+                <input type="text" placeholder="Enter Username" name="username" ngModel>
       
                 <label><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <input type="password" placeholder="Enter Password" name="password" ngModel>
 
                 <button type="submit">Login</button>
             </div>
