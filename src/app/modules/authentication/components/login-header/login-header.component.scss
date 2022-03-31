@@ -1,8 +1,10 @@
+@import '../../../../../assets/variables.sass';
+
 .login-header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f58133;
+    background-color: $orange;
     height: 3rem;
     font-size: 3rem;
 }

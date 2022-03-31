@@ -1,0 +1,25 @@
+@import '../../../.././../assets/variables.sass';
+
+.dashboard-header-container {
+    height: 5rem;
+    width: 100%;
+    background-color: white;
+    border-bottom: 2px solid rgb(204, 200, 200);
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        background-color: gray;
+        border-bottom: 0.1rem solid gray;
+        height: inherit;
+        align-items: center;
+    }
+}
+h3  {
+    color: $orange;
+    font-size: 4rem;
+    text-align: center;
+}   
