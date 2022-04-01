@@ -1,5 +1,9 @@
 .dashboard-layout-container {
     display: flex;
     flex-direction: column;
+    background-color: #F9FAF1;
+    min-height: 100%;
+    app-dashboard-body-layout {
+        padding-top: 5rem;
+    }
 }
-

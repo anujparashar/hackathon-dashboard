@@ -6,6 +6,7 @@ import { DashboardLayoutComponent } from './view/dashboard-layout/dashboard-layo
 import { DashboardHeaderLayoutComponent } from './view/dashboard-header-layout/dashboard-header-layout.component';
 import { DashboardBodyLayoutComponent } from './view/dashboard-body-layout/dashboard-body-layout.component';
 import { ChallengesLayoutComponent } from './view/challenges-layout/challenges-layout.component';
+import { SharedModuleModule } from '../shared-module/shared-module.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ChallengesLayoutComponent } from './view/challenges-layout/challenges-l
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    SharedModuleModule
   ]
 })
 export class DashboardModule { }

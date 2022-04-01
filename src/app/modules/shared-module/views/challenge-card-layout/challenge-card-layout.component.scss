@@ -1,0 +1,13 @@
+.challenge-card-layout {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background-color: white;
+    height: inherit;
+    padding: 3rem;
+    border-bottom: 0.1rem solid gray;
+    border-radius: 1rem;
+    app-challenge-description {
+        padding-top: 1rem;
+    }
+}

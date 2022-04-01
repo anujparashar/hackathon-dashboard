@@ -1,25 +1,29 @@
 @import '../../../.././../assets/variables.sass';
 
 .dashboard-header-container {
-    height: 5rem;
+    height: 10rem;
     width: 100%;
     background-color: white;
     border-bottom: 2px solid rgb(204, 200, 200);
     font-size: 2rem;
     display: flex;
     flex-direction: column;
-    .container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        background-color: gray;
-        border-bottom: 0.1rem solid gray;
-        height: inherit;
-        align-items: center;
+    .screen {
+        padding-top: 1rem;
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            background-color: #d7d0d0;
+            border-bottom: 0.1rem solid #d7d0d0;
+            height: inherit;
+            align-items: center;
+            height: 100%;
+        }
+        p {
+            color: $orange;
+            text-align: center;
+        }   
     }
+
 }
-h3  {
-    color: $orange;
-    font-size: 4rem;
-    text-align: center;
-}   

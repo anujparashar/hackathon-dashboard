@@ -1,9 +1,13 @@
-<h3>HACK IDEAS!</h3>
 <div class="dashboard-header-container">
-    <div class="container">
-        <div class="item-1"> Challenges </div>
-        <div class="item-2"> Add Challenge </div>
-        <div class="item-3"> Feature 2 </div>
-        <div class="item-4"> Feature 4</div>
+    <div class="screen">
+        <p>HACK IDEAS!</p>
+        <div class="container">
+            <ng-container *ngFor="let item of features">
+                <div (click)="routes(item)">
+                    <i class="{{ item.icon }}"></i>
+                    {{ item.key }}
+                </div>
+            </ng-container>
+        </div>
     </div>
 </div>
