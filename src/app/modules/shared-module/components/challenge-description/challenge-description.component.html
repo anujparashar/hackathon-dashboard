@@ -1,1 +1,8 @@
-<p>{{description}}</p>
+<div class="challenge-description">
+    <p>{{description | readMore: maxLength: '...'}}</p>
+    <span *ngIf="description.length > maxLength; else readLess" (click)="showAll()" class="read-more">...Read
+        More</span>
+    <ng-template #readLess>
+        <span (click)="maxLength = 40" class="read-more">...Read Less</span>
+    </ng-template>
+</div>
