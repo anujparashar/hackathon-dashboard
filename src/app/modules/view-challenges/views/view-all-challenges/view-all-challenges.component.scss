@@ -1,0 +1,13 @@
+.view-challenge-container {
+    app-sortby {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 15rem;
+    }
+
+    app-challenge-card-layout {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

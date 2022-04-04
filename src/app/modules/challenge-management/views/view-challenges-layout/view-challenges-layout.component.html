@@ -1,0 +1,11 @@
+<div class="view-challenge-container">
+    <mat-list>
+        <mat-list-item [routerLink]="['add-challenge']" routerLinkActive="active">
+            Add Challenge
+        </mat-list-item>
+        <mat-list-item [routerLink]="['delete-challenge']" routerLinkActive="active">
+            Delete Challenge
+        </mat-list-item>
+    </mat-list>
+    <router-outlet></router-outlet>
+</div>

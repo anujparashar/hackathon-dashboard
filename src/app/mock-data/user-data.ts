@@ -5,7 +5,7 @@ export const USER_DATA = {
             "roles": [
                 {
                     "role": "admin",
-                    "features": ["add-task", "view-task"]
+                    "features": ["view-challenges", 'add-challenges', 'manage-challenges', "delete-challenges"]
                 }
             ]
         },
@@ -14,7 +14,7 @@ export const USER_DATA = {
             "roles": [
                 {
                     "role": "candidate",
-                    "features": ["view-task"]
+                    "features": ["view-challenge"]
                 }
             ]
         }

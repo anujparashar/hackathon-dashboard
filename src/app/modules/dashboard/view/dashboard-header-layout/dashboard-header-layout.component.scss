@@ -1,29 +1,47 @@
-@import '../../../.././../assets/variables.sass';
+@import "../../../.././../assets/variables.sass";
 
 .dashboard-header-container {
-    height: 10rem;
+    // height: 10rem;
     width: 100%;
     background-color: white;
-    border-bottom: 2px solid rgb(204, 200, 200);
     font-size: 2rem;
     display: flex;
     flex-direction: column;
-    .screen {
+
+    p:first-child {
         padding-top: 1rem;
-        .container {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            background-color: #d7d0d0;
-            border-bottom: 0.1rem solid #d7d0d0;
-            height: inherit;
-            align-items: center;
-            height: 100%;
-        }
-        p {
-            color: $orange;
-            text-align: center;
-        }   
+        color: $orange;
+        text-align: center;
     }
 
+    mat-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        background-color: $light-gray;
+        border-bottom: 0.1rem solid $light-gray;
+        height: 100%;
+        align-items: center;
+        height: 100%;
+        padding-top: 0;
+        padding-bottom: 0;
+
+        mat-list-item {
+            height: 100%;
+            padding: 1.5rem;
+            i {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+
+        mat-list-item:hover i{
+            padding-left: 1.8rem;
+            padding-right: 1.8rem;
+            color: gray;
+            transition: 0.2s;
+            transform: rotateY(180deg);
+        }
+
+    }
 }

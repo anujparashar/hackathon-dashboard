@@ -1,13 +1,9 @@
 <div class="dashboard-header-container">
-    <div class="screen">
-        <p>HACK IDEAS!</p>
-        <div class="container">
-            <ng-container *ngFor="let item of features">
-                <div (click)="routes(item)">
-                    <i class="{{ item.icon }}"></i>
-                    {{ item.key }}
-                </div>
-            </ng-container>
-        </div>
-    </div>
+    <p>HACK IDEAS!</p>
+    <mat-list>
+        <mat-list-item *ngFor="let item of tabFeatures" [routerLink]="[item.url]" routerLinkActive="active">
+            <i class="{{ item.icon }}"></i>
+                {{ item.key }}
+        </mat-list-item>
+    </mat-list>
 </div>

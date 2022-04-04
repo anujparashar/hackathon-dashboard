@@ -1,0 +1,14 @@
+<div class="card-footer-container">
+    <div class="row">
+        <div class="col-8"></div>
+        <div class="col-2" *ngIf="challengeConfig.likeButton">
+            <i [ngClass]="{'liked': card.likes.liked}" class="fa-solid fa-thumbs-up orange-color" (click)="onLike()">
+                <span>
+                    {{card.likes.count}}
+                </span></i>
+        </div>
+        <div class="col-2 orange-color">
+            {{card.creationDate | date:'mediumDate'}}
+        </div>
+    </div>
+</div>

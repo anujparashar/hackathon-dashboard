@@ -2,11 +2,15 @@ export const FEATURES = [
     {
         key: 'Challenges',
         icon: 'fa-solid fa-list',
-        url: 'challenges'
+        url: 'view-challenges',
+        multipleFields: [],
+        featureName: 'view-challenges'
     },
     {
-        key: 'Add Challenge',
-        icon: 'fa-solid fa-plus',
-        url: '/add-challenge'
+        key: 'Manage Challenges',
+        icon: 'fa-solid fa-gear',
+        url: 'manage-challenges',
+        featureName: 'manage-challenges',
+        multipleFields: []
     }
 ]

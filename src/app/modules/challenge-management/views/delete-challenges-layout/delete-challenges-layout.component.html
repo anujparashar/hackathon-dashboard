@@ -1,0 +1,3 @@
+<div *ngFor="let card of challenges">
+    <app-challenge-card-layout [card]="card" [challengeConfig] = "challengeConfig" (deleteChallenge)="deleteChallengeEvent($event)"></app-challenge-card-layout>
+</div>

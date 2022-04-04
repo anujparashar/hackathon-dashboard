@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { USER_TYPE } from 'src/app/interfaces/user';
 import { USER_DATA } from 'src/app/mock-data/user-data';
-import { LoginForm } from '../../interfaces/login-form';
+import { GetFeatureService } from 'src/app/shell-serivces/get-feature.service';
 
 @Component({
     selector: 'app-login-page',
@@ -9,18 +11,38 @@ import { LoginForm } from '../../interfaces/login-form';
     styleUrls: ['./login-page.component.scss'],
 })
 export class LoginPageComponent implements OnInit {
-    constructor(private router: Router) { }
+    loginForm: any;
+    user: USER_TYPE;
 
-    ngOnInit(): void { }
+    constructor(private router: Router, private getFeatureService: GetFeatureService, private formBuilder: FormBuilder) { }
 
-    onSubmit(formData: LoginForm) {
-        const user = USER_DATA.users.find(
-            (user) => user.userId === formData.username
+    ngOnInit(): void {
+        this.loginForm = this.formBuilder.group({
+            userid: ['', Validators.required],
+            password: ['', Validators.required]
+        });
+    }
+
+    onSubmit() {
+        //  mock authentication by checcking users credentials with the one present in our database
+        this.user = USER_DATA.users.find(
+            (user) => user.userId === this.getForm.userid.value
         );
-        user
-            ? sessionStorage.setItem('isLoggedIn', 'true')
-            : sessionStorage.setItem('isLoggedIn', 'false');
+
+        // set user login status in session based on authentication
+        if (this.user) {
+            sessionStorage.setItem('isLoggedIn', JSON.stringify({ ...this.user, login: true }));
+            // set user info in global service so as to make it accessible throughout
+            this.getFeatureService.setLoggedInUserFeatures(this.user.roles[0].features);
+        } else {
+            sessionStorage.setItem('isLoggedIn', JSON.stringify({ ...this.user, login: false }));
+        }
         this.router.navigate(['dashboard']);
+
+    }
+
+    // to get form control details;
+    get getForm() {
+        return this.loginForm.controls;
     }
 }
-

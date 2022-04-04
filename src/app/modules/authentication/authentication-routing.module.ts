@@ -5,9 +5,8 @@ import { LoginLayoutComponent } from './views/login-layout/login-layout.componen
 const routes: Routes = [
   {
     path: '',
-    component: LoginLayoutComponent,
-    children: []
-  }
+    component: LoginLayoutComponent
+    }
 ];
 
 @NgModule({

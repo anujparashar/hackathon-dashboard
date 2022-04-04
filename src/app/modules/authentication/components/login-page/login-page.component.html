@@ -1,14 +1,14 @@
 <div class="login-container">
     <h3>Signup Page</h3>
-        <form (ngSubmit)="onSubmit(formData.value)" #formData = "ngForm">      
+        <form  [formGroup]="loginForm" (ngSubmit)="onSubmit()">      
             <div class="login-body">
                 <label><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="username" ngModel>
+                <input type="text" placeholder="Enter Username" name="username" formControlName="userid">
       
                 <label><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="password" ngModel>
+                <input type="password" placeholder="Enter Password" name="password" formControlName="password">
 
-                <button type="submit">Login</button>
+                <button [disabled]="loginForm.invalid" type="submit">Login</button>
             </div>
         </form>
 </div>

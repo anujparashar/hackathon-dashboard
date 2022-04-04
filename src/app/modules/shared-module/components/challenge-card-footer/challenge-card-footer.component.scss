@@ -1,0 +1,15 @@
+@import '../../../../../assets/variables.sass';
+
+.card-footer-container {
+    i {
+        span {
+            padding: 1rem;
+        }
+    }
+    .orange-color {
+        color: $orange;;
+    }
+    .liked {
+        color: blue;
+    }
+}

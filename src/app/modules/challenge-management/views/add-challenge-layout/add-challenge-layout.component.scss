@@ -1,0 +1,44 @@
+.add-challenge-container {
+    width: 100%;
+    height: 50%;
+    border: 0.1rem solid gray;
+    padding: 2rem;
+    margin-top: 1rem;
+
+    textarea[id=title] {
+        height: 10rem;
+    }
+
+    textarea[id=description] {
+        height: 20rem;
+    }
+
+    input[id=id] {
+        height: 3rem;
+    }
+
+    button[id=submitChallenge] {
+        background-color: cadetblue;
+        height: 3rem;
+        width: 10rem;
+        margin-top: 1rem;
+    }
+
+    label {
+        font-weight: bold;
+        padding: 1rem;
+    }
+
+    .error {
+        border-color: red;
+        color: red;
+    }
+
+    .tags {
+        display: block;
+    }
+}
+// ::deep has been used to change default color of material select dropdowns, it should be used with caution atany other place
+    ::ng-deep  .mat-form-field-appearance-fill .mat-form-field-flex {
+        background-color: white !important;
+}

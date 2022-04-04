@@ -1,5 +1,10 @@
 <div class="challenge-card-layout">
-  <app-challenge-title [title] = card.title> </app-challenge-title>
-  <app-challenge-description [description]= "card.description"> </app-challenge-description>
-  <app-challenge-tags [tags]= "card.tags"> </app-challenge-tags>
+    <!-- show delete icon only if its feature is on -->
+    <span *ngIf="challengeConfig.delete">
+        <i class="fa-solid fa-trash-can" (click)="deleteChallenge(card)"></i>
+    </span>
+    <app-challenge-title [title]=card.title> </app-challenge-title>
+    <app-challenge-description [description]="card.description"> </app-challenge-description>
+    <app-challenge-tags [tags]="card.tags"> </app-challenge-tags>
+    <app-challenge-card-footer [card]=card [challengeConfig]="challengeConfig"></app-challenge-card-footer>
 </div>

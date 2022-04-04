@@ -1,0 +1,50 @@
+<div class="add-challenge-container">
+    <div class="row">
+        <div class="col">
+        Please fill all the details
+        </div>
+    </div>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-8">
+                        <label  for="id">Challenge ID</label>
+                        <input pattern="[0-9]*"  type="number" id="id" class="form-control" formControlName="id" [ngClass]="{'error': submitted && f.id.invalid}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                        <label for="title">Title</label>
+                        <textarea type="text" id="title" class="form-control" formControlName="title" [ngClass]="{'error': submitted && f.title.invalid}"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                        <label for="description">Challenge Description</label>
+                        <textarea type="text" id="description" class="form-control" formControlName="description" [ngClass]="{'error': submitted && f.description.invalid}"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col5">
+                        <label for="tag" class="tags">Tags</label>
+                        <mat-form-field appearance="fill">
+                            <mat-label>TAGS</mat-label>
+                            <mat-select formControlName="tags" multiple>
+                              <mat-option *ngFor="let tag of tagList" [value]="tag">{{tag}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+                <button [disabled]="this.addForm.invalid || (!this.addForm.invalid && this.submitted)" id="submitChallenge" type="submit" class="btn">Create Challenge</button>
+            </div>
+        </div>
+    </form>
+</div>

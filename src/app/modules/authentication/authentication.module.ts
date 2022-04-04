@@ -1,25 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LoginLayoutComponent } from './views/login-layout/login-layout.component';
-import { LoginPageComponent } from './components/login-page/login-page.component';
-import { LoginFooterComponent } from './components/login-footer/login-footer.component';
-import { LoginHeaderComponent } from './components/login-header/login-header.component';
 import { AuthenticationRoutingModule } from './authentication-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { views } from './views/login-layout';
+import { components } from './components';
 
 
 @NgModule({
   declarations: [
-    LoginLayoutComponent,
-    LoginPageComponent,
-    LoginFooterComponent,
-    LoginHeaderComponent
+    ...views,
+    ...components
   ],
   imports: [
     CommonModule,
     FormsModule,
-    AuthenticationRoutingModule
+    AuthenticationRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class Authentication { }
