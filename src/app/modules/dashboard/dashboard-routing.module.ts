@@ -19,7 +19,7 @@ const routes: Routes = [
             },
             {
                 path: 'manage-challenges',
-                canActivate: [AuthGuard],
+                canActivate: [AuthGuard, ManageChallengeFeatureGuard],
                 loadChildren: () =>
                     import('../challenge-management/challenge-management.module').then(
                         (module) => module.ChallengeManagementModule

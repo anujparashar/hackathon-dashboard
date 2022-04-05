@@ -8,6 +8,7 @@ import { DashboardService } from 'src/app/modules/dashboard/services/dashboard.s
     styleUrls: ['./challenge-card-footer.component.scss']
 })
 export class ChallengeCardFooterComponent implements OnInit {
+    // card is pass by reference so store will automatically get updated when card is liked or unlike
     @Input('card') card: CHALLENGE_TYPE;
     @Input('challengeConfig') challengeConfig ?: any;
 
@@ -31,14 +32,4 @@ export class ChallengeCardFooterComponent implements OnInit {
         }
 
       }
-
-    updateStore() {
-        this.dashboardService.updateChallenges(this.challenges.map((item: CHALLENGE_TYPE) => {
-            if(this.card.id === item.id) {
-                return {...this.card}
-            } else {
-                return item;
-            }
-        }))
-    }
 }

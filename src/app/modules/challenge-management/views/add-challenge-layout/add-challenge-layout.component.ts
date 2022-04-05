@@ -28,8 +28,9 @@ export class AddChallengeLayoutComponent implements OnInit {
         this.submitted = true;
         if(!this.addForm.invalid) {
             const createdMonth = new Date().getMonth();
-            const createdDay = new Date().getDate()
-            const createdYear = new Date().getFullYear()
+            const createdDay = new Date().getDate();
+            const createdYear = new Date().getFullYear();
+            // add challenge with default likes and date of creation
             this.dashboardService.addChallenge({...this.addForm.value , likes:{liked: false,count:0}, creationDate: new Date(createdYear,  createdMonth, createdDay)})
         }
      }

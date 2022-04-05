@@ -43,7 +43,7 @@
 
         <div class="row">
             <div class="col-5">
-                <button [disabled]="this.addForm.invalid || (!this.addForm.invalid && this.submitted)" id="submitChallenge" type="submit" class="btn">Create Challenge</button>
+                <button [disabled]="(!this.addForm.invalid && this.submitted)" id="submitChallenge" type="submit" class="btn">Create Challenge</button>
             </div>
         </div>
     </form>

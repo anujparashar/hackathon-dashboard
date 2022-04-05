@@ -7,7 +7,7 @@ import { CHALLENGE_TYPE } from 'src/app/interfaces/challenge';
     styleUrls: ['./challenge-card-layout.component.scss']
 })
 export class ChallengeCardLayoutComponent implements OnInit {
-    @Input('card') card: any;
+    @Input('card') card: CHALLENGE_TYPE;
     @Input('challengeConfig') challengeConfig ? = {delete: false,likeButton: true };
     @Output('deleteChallenge') deleteChallengeEvent ? = new EventEmitter<CHALLENGE_TYPE>();
     constructor() { }

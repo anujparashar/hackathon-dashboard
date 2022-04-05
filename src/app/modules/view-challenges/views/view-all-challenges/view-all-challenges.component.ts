@@ -20,7 +20,9 @@ export class ViewAllChallengesComponent implements OnInit, OnDestroy {
 
     getChallenges() {
         this.subscription = this.dashboardService.getAllChallenges().subscribe((challenges) => {
-            this.challenges = challenges;            
+            this.challenges = challenges;
+            console.log(this.challenges, '');
+                     
         });
     }
 

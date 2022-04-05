@@ -25,6 +25,8 @@ export class DashboardLayoutComponent implements OnInit {
 
     getTabFeatures() {
         this.userFeatures = this.getFeatureService.getLoggedInUserFeatures();
+        // if want to turnoff any of the feature for any user (for any reason like some big failure in that particular module),
+        //  just remove featureName from FEATURES in constant file
         const tabs = this.tabFeatures.filter((val) => {
             return this.userFeatures.includes(val.featureName);
         });

@@ -11,10 +11,6 @@ export class PageNotFoundComponent implements OnInit, OnDestroy {
     content: string;
     subscription: Subject<void> = new Subject();
     constructor(private activatedroute: ActivatedRoute) { }
-    ngOnDestroy(): void {
-        this.subscription.next();
-        this.subscription.complete();
-    }
 
     ngOnInit(): void {
         this.activatedroute.data.pipe(takeUntil(this.subscription)).subscribe((data: any) => {
@@ -22,4 +18,8 @@ export class PageNotFoundComponent implements OnInit, OnDestroy {
         })
     }
 
+    ngOnDestroy(): void {
+        this.subscription.next();
+        this.subscription.complete();
+    }
 }

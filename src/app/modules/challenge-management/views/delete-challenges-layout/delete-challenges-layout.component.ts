@@ -25,6 +25,7 @@ export class DeleteChallengesLayoutComponent implements OnInit {
 
     getAllChallenges() {
         this.dashboardService.getAllChallenges().pipe(takeUntil(this.unsubscribe)).subscribe((challenge: CHALLENGE_TYPE[]) => {
+            console.log(challenge)
             this.challenges = challenge;
         })
     }
