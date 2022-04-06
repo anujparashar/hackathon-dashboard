@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## dependencies
 
-Run `npm install` to get dependencies like angular material, bootstrap and font awesome.
+Run `npm install` to get dependencies of angular material, bootstrap and font awesome.
 
 ## Development server
 
