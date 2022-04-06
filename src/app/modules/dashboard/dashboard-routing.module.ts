@@ -12,6 +12,13 @@ const routes: Routes = [
         component: DashboardLayoutComponent,
         children: [
             {
+                path: '',
+                component: PageNotFoundComponent,
+                data: {
+                    key: 'default page', message: 'What difference you are going to make today ?'
+                }
+            },
+            {
                 path: 'view-challenges',
                 loadChildren: () => import('../view-challenges/view-challenges.module').then(
                     (module) => module.ViewChallengesModule

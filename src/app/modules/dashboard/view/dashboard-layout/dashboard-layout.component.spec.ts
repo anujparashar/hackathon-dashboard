@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FEATURES } from 'src/app/constants/dashboard-tab-features';
-import { MOCK_FEATURES } from 'src/app/mock-data/mock-features';
+import { MOCK_FEATURES } from 'src/app/mock-test-data/mock-features';
 import { USER_DATA_MOCK } from 'src/app/mock-test-data/mock-user';
 import { GetFeatureService } from 'src/app/shell-serivces/get-feature.service';
 import { DashboardBodyLayoutComponent } from '../dashboard-body-layout/dashboard-body-layout.component';

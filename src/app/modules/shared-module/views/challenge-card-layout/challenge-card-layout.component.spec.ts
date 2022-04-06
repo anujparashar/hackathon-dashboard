@@ -1,5 +1,8 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AngularMaterialModule } from 'src/app/angular-material.module';
 import { TEST_CHALLENGES } from 'src/app/mock-test-data/mock-test-challenge-data';
+import { ChallengeCardFooterComponent, ChallengeDescriptionComponent } from '../../components';
 
 import { ChallengeCardLayoutComponent } from './challenge-card-layout.component';
 
@@ -9,7 +12,9 @@ describe('ChallengeCardLayoutComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [ChallengeCardLayoutComponent]
+            schemas:[CUSTOM_ELEMENTS_SCHEMA],
+            declarations: [ChallengeCardLayoutComponent, ChallengeCardFooterComponent, ChallengeDescriptionComponent],
+            imports: [AngularMaterialModule]
         })
             .compileComponents();
     });

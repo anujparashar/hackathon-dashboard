@@ -2,6 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { TEST_CHALLENGES } from 'src/app/mock-test-data/mock-test-challenge-data';
 import { DashboardService } from 'src/app/modules/dashboard/services/dashboard.service';
+import { SharedModuleModule } from 'src/app/modules/shared-module/shared-module.module';
+import { ChallengeCardLayoutComponent } from 'src/app/modules/shared-module/views';
 
 import { DeleteChallengesLayoutComponent } from './delete-challenges-layout.component';
 
@@ -10,17 +12,18 @@ describe('DeleteChallengesLayoutComponent', () => {
     let fixture: ComponentFixture<DeleteChallengesLayoutComponent>;
     let dashboardServiceMock = {
         getAllChallenges: jasmine.createSpy('getAllChallenges').and.callFake(() => {
-            return of(TEST_CHALLENGES)
+            return of(JSON.parse(JSON.stringify(TEST_CHALLENGES)))
         }),
         updateChallenges: jasmine.createSpy('updateChallenges')
     }
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [DeleteChallengesLayoutComponent],
+            declarations: [DeleteChallengesLayoutComponent, ChallengeCardLayoutComponent],
             providers: [{
                 provide: DashboardService,
                 useValue: dashboardServiceMock
-            }]
+            }],
+            imports: [SharedModuleModule]
         })
             .compileComponents();
     });

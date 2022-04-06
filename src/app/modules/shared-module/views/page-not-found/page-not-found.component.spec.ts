@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
@@ -7,18 +8,19 @@ import { PageNotFoundComponent } from './page-not-found.component';
 describe('PageNotFoundComponent', () => {
     let component: PageNotFoundComponent;
     let fixture: ComponentFixture<PageNotFoundComponent>;
-    let ActivatedRouteMock = {
+    let activatedRouteMock = {
         data: {
-            subscribe: jasmine.createSpy('subscribe').and.callFake(() =>  of('')),
-            pipe: () => {}
+            subscribe: jasmine.createSpy('subscribe'),
+            pipe: () => of('some value')
         }
     };
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [PageNotFoundComponent],
+            schemas: [CUSTOM_ELEMENTS_SCHEMA],
             providers: [
                 {
-                    provide: ActivatedRoute, useValue: ActivatedRouteMock
+                    provide: ActivatedRoute, useValue: activatedRouteMock
                 }
             ]
         })
@@ -34,11 +36,4 @@ describe('PageNotFoundComponent', () => {
     it('should create', () => {
         expect(component).toBeTruthy();
     });
-
-    describe('on component initialization', () => {
-        it('shhould call activated route', () => {
-            component.ngOnInit();
-            expect(ActivatedRouteMock.data.subscribe).toHaveBeenCalled();
-        })
-    })
 });

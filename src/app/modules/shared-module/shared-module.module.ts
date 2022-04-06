@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SharedModuleRoutingModule } from './shared-module-routing.module';
@@ -21,8 +21,10 @@ import { views } from './views';
     SharedModuleRoutingModule
   ],
   exports: [
-    ChallengeCardLayoutComponent,
-    PageNotFoundComponent
-  ]
+    ...components,
+    ...views,
+    ReadMorePipe
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SharedModuleModule { }

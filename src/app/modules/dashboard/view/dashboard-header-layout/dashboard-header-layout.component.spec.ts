@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AngularMaterialModule } from 'src/app/angular-material.module';
 
 import { DashboardHeaderLayoutComponent } from './dashboard-header-layout.component';
 
@@ -8,7 +9,8 @@ describe('DashboardHeaderLayoutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DashboardHeaderLayoutComponent ]
+      declarations: [ DashboardHeaderLayoutComponent ],
+      imports: [AngularMaterialModule]
     })
     .compileComponents();
   });

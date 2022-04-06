@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TEST_CHALLENGES } from 'src/app/mock-test-data/mock-test-challenge-data';
 import { ReadMorePipe } from '../../pipes/read-more.pipe';
@@ -10,7 +11,8 @@ describe('ChallengeDescriptionComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [ChallengeDescriptionComponent, ReadMorePipe]
+            declarations: [ChallengeDescriptionComponent, ReadMorePipe],
+            schemas: [CUSTOM_ELEMENTS_SCHEMA]
         })
             .compileComponents();
     });
